@@ -6,7 +6,7 @@
 Use git to clone the repository:
 
 ```bash
-git clone https://github.com/TODO
+git clone https://github.com/unica-isde/web-server-2023
 ```
 
 Optional but recommended - create conda environment: https://docs.conda.io/projects/miniconda/en/latest/
