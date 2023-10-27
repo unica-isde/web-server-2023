@@ -26,16 +26,16 @@ Additional requirements:
 
 ## Configuration
 
-Configure the service by editing the file `config.py`.
+Configure the service by editing the file `app/config.py`.
 
 ## Prepare the resources
 
 It is recommended to pre-download images and models before running 
 the server. This is to avoid unnecessary waits for users.
 
-Run `prepare_images.py` and `prepare_models.py`. Models will 
+Run `python app/prepare_images.py` and `python app/prepare_models.py`. Models will 
 be stored in your PyTorch cache directory, while the path for 
-the image directory can be found in the `config.py` file. 
+the image directory can be found in the `app/config.py` file. 
 
 ```bash
 python app/prepare_images.py
