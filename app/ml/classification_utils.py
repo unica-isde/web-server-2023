@@ -51,7 +51,6 @@ def classify_image(model_id, img_id):
     """Returns the top-5 classification score output from the
     model specified in model_id when it is fed with the
     image corresponding to img_id."""
-    print("Merds")
     img = fetch_image(img_id)
     model = get_model(model_id)
     model.eval()
