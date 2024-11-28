@@ -1,5 +1,5 @@
-import redis
-from rq import Connection, Worker
+from redis import Redis
+from rq import Worker
 
 from app.config import Configuration
 
@@ -9,11 +9,9 @@ config = Configuration()
 def run_worker():
     """Picks tasks from the queue and runs them,
     storing back the results."""
-    redis_url = config.REDIS_URL
-    redis_connection = redis.from_url(redis_url)
-    with Connection(redis_connection):
-        worker = Worker([config.QUEUE])
-        worker.work()
+    redis_connection = Redis(config.REDIS_HOST, config.REDIS_PORT)
+    worker = Worker([config.QUEUE], connection=redis_connection)
+    worker.work()
 
 
 run_worker()
